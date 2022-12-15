@@ -19,7 +19,7 @@ int main(void)
 	// Datadirection Pin D6 als Ausgang
 	DDRD |= (1 << DDD6);
 
-	OCR0A = 64;  // 256 * Duty / 100
+	OCR0A = 255;  // 256 * Duty / 100
 	// set PWM for 75% duty cycle
 
 
@@ -33,13 +33,9 @@ int main(void)
 	// set prescaler to 8 and starts PWM
 	
 	
-
 	
 	while (1)
 	{
-		
-	// langsam heller (10ms) 0->max
-	// langsam wieder dunkler max->0 
-		
+	
 	}
 }

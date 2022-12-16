@@ -11,10 +11,11 @@
 
 
 
-
+#define F_CPU 16000000UL
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
 
 ISR (TIMER0_COMPA_vect)  // timer0 overflow interrupt
 {
@@ -32,6 +33,7 @@ ISR(INT1_vect) {
 int main(void)
 {
 
+	// Data Direction Register
 	DDRB = 0xFF;
 	PORTB = 0;
 
@@ -39,7 +41,7 @@ int main(void)
 	TCCR0A |= (1 << WGM01);
 
 	// Set the value that you want to count to
-	OCR0A = 119; // Kammerton A
+	OCR0A = 70; // Kammerton A
 	
 
 	TIMSK0 |= (1 << OCIE0A);    //Set the ISR COMPA vect
@@ -56,7 +58,7 @@ int main(void)
 
 	while (1)
 	{
-		//main loop
+		
 	}
 }
 

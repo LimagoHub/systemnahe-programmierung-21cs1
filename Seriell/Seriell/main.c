@@ -20,6 +20,9 @@ ISR (USART_RX_vect)
 }
 
 
+//usart_init() // 9600
+//usart_send_char(char c)
+
 int main(void)
 {
 	// Baudrate setzen
